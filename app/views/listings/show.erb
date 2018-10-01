@@ -1,0 +1,6 @@
+<h2><%= @listing.name %></h2> <br>
+<p>
+  Price: $<%= @listing.price %><br>
+  Owner: <%=link_to @listing.user.name, @listing.user %> <br><br>
+  <%= link_to "Go back to all listings", listings_path %>
+</p>
