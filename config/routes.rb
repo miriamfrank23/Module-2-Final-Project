@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :listings, only: [:show, :new, :create, :edit, :update, :destroy]
+  resources :listings
   get '/', :to => 'listings#index'
   resources :bookings
   resources :users
