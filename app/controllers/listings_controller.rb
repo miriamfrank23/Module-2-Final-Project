@@ -41,7 +41,13 @@ class ListingsController < ApplicationController
   end
 
   def create
-    # byebug
+    byebug
+    # //grab session id and use it to find user that will make listing
+    #   //look at what session is
+    #
+    # //@user = User.find(session_id)
+    # //replace listing.user_id with @user.id
+
     @listing = Listing.create(listing_params)
     if @listing.valid?
       @listing.state = params[:state]

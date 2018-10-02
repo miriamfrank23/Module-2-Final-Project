@@ -15,8 +15,8 @@
   <%= f.text_field :city %>
   <%= f.label :address %>
   <%= f.text_field :address %>
-  <%= f.label :user %>
-  <%= f.collection_select :user_id, User.all, :id, :name %><br>
+  <!-- <%= f.label :user %> -->
+  <!-- <%= f.collection_select :user_id, User.all, :id, :name %><br> -->
   <label>Upload a photo of your listing:</label>
    <%= f.file_field :image %><br><br>
   <%= f.submit %>
