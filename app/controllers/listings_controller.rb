@@ -5,7 +5,6 @@ class ListingsController < ApplicationController
 
   def index
     if params[:state]
-<<<<<<< HEAD
       if params[:state].length != 2
        flash[:notice] = "Please enter a state abbreviation! (NY, NJ, CA)"
        redirect_to listings_path
@@ -16,30 +15,13 @@ class ListingsController < ApplicationController
         end
 
          if @listings.length > 0
-           
+
             @listings
          else
            flash[:notice] = "No Matches in That State"
            redirect_to listings_path
          end
-=======
-    if params[:state].length != 2
-       flash[:notice] = "Please enter a state abbreviation! (NY, NJ, CA)"
-       # byebug
-       redirect_to listings_path
-     end
 
-     @listings = Listing.all.select do |listing|
-       listing[:state].downcase == params[:state].downcase
-     end
-
-       if @listings.length > 0
-         @listings
-         redirect_to @listings
-       else
-         flash[:notice] = "No Matches in That State"
-         redirect_to listings_path
->>>>>>> master
        end
    else
      @listings = Listing.all.uniq
@@ -51,12 +33,20 @@ class ListingsController < ApplicationController
 
   def new
     @listing = Listing.new
+    @states = [
+		"AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DC",
+    "DE", "FL", "GA", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "LA",
+    "MA", "MD", "ME", "MI", "MN", "MO", "MS", "MT", "NC", "ND", "NE",
+    "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "RI", "SC",
+    "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV", "WY"]
   end
 
   def create
     # byebug
     @listing = Listing.create(listing_params)
     if @listing.valid?
+      @listing.state = params[:state]
+      @listing.save
       redirect_to @listing
     else
       flash[:error] = @listing.errors.full_messages
@@ -65,7 +55,12 @@ class ListingsController < ApplicationController
   end
 
   def edit
-
+    @states = [
+		"AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DC",
+    "DE", "FL", "GA", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "LA",
+    "MA", "MD", "ME", "MI", "MN", "MO", "MS", "MT", "NC", "ND", "NE",
+    "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "RI", "SC",
+    "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV", "WY"]
   end
 
   def update
@@ -94,11 +89,7 @@ private
   end
 
   def listing_params
-<<<<<<< HEAD
-    params.require(:listing).permit(:name, :user_id, :price, :state)
-=======
-    params.require(:listing).permit(:name, :user_id, :price, :image)
->>>>>>> master
+    params.require(:listing).permit(:name, :user_id, :price, :image, :state, :city, :address)
   end
 
 end
