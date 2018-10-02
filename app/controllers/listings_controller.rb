@@ -42,7 +42,6 @@ class ListingsController < ApplicationController
 
   def create
     @user = User.find_by(id: session[:user_id])
-    byebug
     @listing = Listing.create(listing_params)
     @listing.user_id = @user.id
     if @listing.valid?
