@@ -8,6 +8,8 @@
 </p>
 
 <p>
+  <% if current_user == @user %>
   <%= link_to "Add a listing", new_listing_path %></br>
   <%= link_to "Logout", logout_path, method: :delete %>
+  <% end %>
  </p>
