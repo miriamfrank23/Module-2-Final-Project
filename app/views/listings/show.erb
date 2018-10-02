@@ -1,6 +1,11 @@
 <h2><%= @listing.name %></h2> <br>
 <p>
+  <%= image_tag(@listing.image_url.to_s) %><br><br>
   Price: $<%= @listing.price %><br>
   Owner: <%=link_to @listing.user.name, @listing.user %> <br><br>
-  <%= link_to "Go back to all listings", listings_path %>
 </p>
+
+<%= link_to "Edit this listing", edit_listing_path%><br>
+<%= link_to "Remove this listing", @listing, method: "delete" %>
+
+<p>  <%= link_to "Go back to all listings", listings_path %> </p>
