@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/', :to => 'listings#index'
   resources :bookings
   resources :users
+  resources :reviews
   get    '/signup',  to: 'users#new'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
