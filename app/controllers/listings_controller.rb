@@ -21,6 +21,10 @@ class ListingsController < ApplicationController
            flash[:notice] = "No Matches in That State"
            redirect_to listings_path
          end
+<<<<<<< HEAD
+=======
+
+>>>>>>> f4aedbad0facb834e074d744d91de1f352604c57
        end
    else
      @listings = Listing.all.uniq
@@ -32,12 +36,20 @@ class ListingsController < ApplicationController
 
   def new
     @listing = Listing.new
+    @states = [
+		"AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DC",
+    "DE", "FL", "GA", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "LA",
+    "MA", "MD", "ME", "MI", "MN", "MO", "MS", "MT", "NC", "ND", "NE",
+    "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "RI", "SC",
+    "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV", "WY"]
   end
 
   def create
     # byebug
     @listing = Listing.create(listing_params)
     if @listing.valid?
+      @listing.state = params[:state]
+      @listing.save
       redirect_to @listing
     else
       flash[:error] = @listing.errors.full_messages
@@ -46,7 +58,12 @@ class ListingsController < ApplicationController
   end
 
   def edit
-
+    @states = [
+		"AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DC",
+    "DE", "FL", "GA", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "LA",
+    "MA", "MD", "ME", "MI", "MN", "MO", "MS", "MT", "NC", "ND", "NE",
+    "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "RI", "SC",
+    "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV", "WY"]
   end
 
   def update
@@ -75,8 +92,12 @@ private
   end
 
   def listing_params
+<<<<<<< HEAD
 
     params.require(:listing).permit(:name, :user_id, :price, :state, :image)
+=======
+    params.require(:listing).permit(:name, :user_id, :price, :image, :state, :city, :address)
+>>>>>>> f4aedbad0facb834e074d744d91de1f352604c57
   end
 
 end

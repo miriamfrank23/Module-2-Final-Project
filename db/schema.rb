@@ -29,11 +29,18 @@ ActiveRecord::Schema.define(version: 2018_10_01_232639) do
     t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
+=======
+    t.string "image"
+>>>>>>> f4aedbad0facb834e074d744d91de1f352604c57
     t.string "city"
     t.string "state"
     t.string "address"
     t.float "rating"
+<<<<<<< HEAD
     t.string "image"
+=======
+>>>>>>> f4aedbad0facb834e074d744d91de1f352604c57
   end
 
   create_table "users", force: :cascade do |t|
