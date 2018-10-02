@@ -7,5 +7,10 @@
   Address: <%= @listing.address %><br>
   Owner: <%=link_to @listing.user.name, @listing.user %> <br>
   <br>
-  <%= link_to "Go back to all listings", listings_path %>
 </p>
+
+  <%= link_to "Go back to all listings", listings_path %><br>
+
+  <% if current_user == @listing.user %>
+    <%= link_to "Delete this listing", @listing, method: :delete, data: { confirm: 'Are you sure you would like to delete this listing?'} %></br>
+  <% end %>

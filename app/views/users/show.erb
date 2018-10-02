@@ -3,6 +3,7 @@
   <ul>
     Properties:<% @user.listings.each do |listing| %><br>
     <li><%=link_to listing.name, listing %></li>
+    <%= image_tag(listing.image_url(:thumb).to_s) %><br>
     <% end %>
   </ul>
 </p>
