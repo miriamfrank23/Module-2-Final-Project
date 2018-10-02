@@ -1,0 +1,11 @@
+<%= form_for @booking do |f|%>
+
+
+<p> Check in Date:
+<%=   date_select("booking", "check_in_date", start_year: 2018, prompt: { day: 'Select day', month: 'Select month', year: 'Select year' })  %>
+</p>
+
+<p> Check out Date:
+<%=   date_select("booking", "check_in_date", start_year: 2018, prompt: { day: 'Select day', month: 'Select month', year: 'Select year' })  %>
+</p>
+<% end %>
