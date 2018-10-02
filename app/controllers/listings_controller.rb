@@ -15,7 +15,6 @@ class ListingsController < ApplicationController
         end
 
          if @listings.length > 0
-
             @listings
          else
            flash[:notice] = "No Matches in That State"
