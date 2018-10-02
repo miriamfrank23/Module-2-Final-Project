@@ -15,7 +15,6 @@ class ListingsController < ApplicationController
         end
 
          if @listings.length > 0
-
             @listings
          else
            flash[:notice] = "No Matches in That State"
@@ -42,8 +41,10 @@ class ListingsController < ApplicationController
   end
 
   def create
-    # byebug
+    @user = User.find_by(id: session[:user_id])
+    byebug
     @listing = Listing.create(listing_params)
+    @listing.user_id = @user.id
     if @listing.valid?
       @listing.state = params[:state]
       @listing.save
