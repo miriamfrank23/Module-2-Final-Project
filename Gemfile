@@ -60,3 +60,10 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Gems for images
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick' # For different versions of an image
+
+#security
+gem 'bcrypt'

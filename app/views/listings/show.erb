@@ -1,5 +1,6 @@
 <h2><%= @listing.name %></h2> <br>
 <p>
+  <%= image_tag(@listing.image_url.to_s) %><br><br>
   Price: $<%= @listing.price %><br>
   Owner: <%=link_to @listing.user.name, @listing.user %> <br>
   <br>
