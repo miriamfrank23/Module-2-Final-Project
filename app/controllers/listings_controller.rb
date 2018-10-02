@@ -1,5 +1,7 @@
 class ListingsController < ApplicationController
   before_action :find_listing, only: [:show, :edit, :update, :destroy]
+  before_action :require_login
+  skip_before_action :require_login, only: [:index, :show]
 
   def index
     if params[:state]
@@ -29,11 +31,18 @@ class ListingsController < ApplicationController
   end
 
   def new
-
+    @listing = Listing.new
   end
 
   def create
-
+    # byebug
+    @listing = Listing.create(listing_params)
+    if @listing.valid?
+      redirect_to @listing
+    else
+      flash[:error] = @listing.errors.full_messages
+      redirect_to new_listing_path
+    end
   end
 
   def edit
@@ -41,21 +50,34 @@ class ListingsController < ApplicationController
   end
 
   def update
-
+    @listing.update(listing_params)
+    if @listing.valid?
+      redirect_to @listing
+    else
+      flash[:error] = @listing.errors.full_messages
+      redirect_to edit_listing_path
+    end
   end
 
   def destroy
-
+    @listing.destroy
+    redirect_to listings_path
   end
 
 private
+
+  def require_login
+    return head(:forbidden) unless session.include? :user_id
+  end
 
   def find_listing
     @listing = Listing.find_by(id: params[:id])
   end
 
   def listing_params
-    params.require(:listing).permit(:name, :user_id, :price, :state)
+    
+    params.require(:listing).permit(:name, :user_id, :price, :image)
+
   end
 
 end

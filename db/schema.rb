@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2018_10_01_194942) do
 
+
   create_table "bookings", force: :cascade do |t|
     t.integer "user_id"
     t.integer "matched_user_id"
@@ -33,6 +34,7 @@ ActiveRecord::Schema.define(version: 2018_10_01_194942) do
     t.string "state"
     t.string "address"
     t.float "rating"
+    t.string "image"
   end
 
   create_table "users", force: :cascade do |t|
@@ -40,6 +42,7 @@ ActiveRecord::Schema.define(version: 2018_10_01_194942) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
 end
