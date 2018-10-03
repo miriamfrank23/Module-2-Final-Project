@@ -5,12 +5,15 @@
 </h3>
 <br>
 
-<span>
-<%= form_tag(listings_path, method: :get) do %>
- Search for a listing by state <br>
- <%= text_field_tag :state, nil, placeholder: "NY, CA, etc." %>  <%= submit_tag 'Search'  %> <br> <br>
-<% end %>
-</span>
+
+<div class="ui large icon input">
+  <%= form_tag(listings_path, method: :get) do %>
+   Search for a listing by state <br>
+   <%= text_field_tag :state, nil, placeholder: "NY, CA, etc." %>  <%= submit_tag 'Search'  %> <br> <br>
+  <% end %>
+  <i class="search icon"></i>
+</div>
+
 
 <% @listings.each do |listing| %>
     <%= image_tag(listing.image_url(:thumb).to_s) %><br>

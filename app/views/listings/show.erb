@@ -19,7 +19,10 @@
 
   <p><%= link_to 'Write A Review', new_review_path(flash[:listing_id] = @listing.id) %></p>
 
-  <p><%= button_to 'Book This Place', '/bookings/new', params: {listing_id: @listing.id}  %></p>
+
+  <%=button_to 'Book This Place', '/bookings/new', params: {listing_id: @listing.id}, class: "ui large basic blue button"
+  %><br>
+
 
   <%= link_to "Go back to all listings", listings_path %><br>
 
