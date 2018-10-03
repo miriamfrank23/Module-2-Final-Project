@@ -37,8 +37,6 @@ ActiveRecord::Schema.define(version: 2018_10_01_194942) do
     t.string "state"
     t.string "address"
     t.float "rating"
-    t.string "image"
-
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -46,8 +44,6 @@ ActiveRecord::Schema.define(version: 2018_10_01_194942) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image"
-
   end
 
   create_table "users", force: :cascade do |t|
