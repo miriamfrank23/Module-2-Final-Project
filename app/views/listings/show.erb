@@ -1,6 +1,9 @@
 <h2><%= @listing.name %></h2> <br>
-<p>
-  <%= image_tag(@listing.image_url.to_s) %><br><br>
+
+
+      <%= image_tag(@listing.image_url.to_s) %><br><br>
+
+
   Price: $<%= @listing.price %><br>
   State: <%= @listing.state %><br>
   City: <%= @listing.city %><br>
@@ -17,7 +20,6 @@
   <p><%= link_to 'Write A Review', new_review_path(flash[:listing_id] = @listing.id) %></p>
 
   <p><%= button_to 'Book This Place', '/bookings/new', params: {listing_id: @listing.id}  %></p>
-</p>
 
   <%= link_to "Go back to all listings", listings_path %><br>
 
