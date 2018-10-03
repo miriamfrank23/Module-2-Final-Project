@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   get 'sessions/new'
-  resources :listings
   get '/', :to => 'listings#index'
+  resources :listings
   resources :bookings
   resources :users
   resources :reviews
+  post '/bookings/new', to: 'bookings#new'
   get    '/signup',  to: 'users#new'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'

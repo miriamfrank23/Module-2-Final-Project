@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2018_10_02_172615) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "listing_id"
+    t.string "check_in_date"
+    t.string "check_out_date"
     t.index ["matched_user_id"], name: "index_bookings_on_matched_user_id"
     t.index ["user_id", "matched_user_id"], name: "index_bookings_on_user_id_and_matched_user_id", unique: true
     t.index ["user_id"], name: "index_bookings_on_user_id"
@@ -39,6 +41,8 @@ ActiveRecord::Schema.define(version: 2018_10_02_172615) do
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.text "description"
+    t.integer "user_id"
+    t.integer "listing_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

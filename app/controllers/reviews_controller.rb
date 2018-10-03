@@ -44,7 +44,7 @@ private
   end
 
   def review_params
-    params.require(:review).permit(:rating, :description)
+    params.require(:review).permit(:rating, :description, :user_id, :listing_id)
   end
 
 end
