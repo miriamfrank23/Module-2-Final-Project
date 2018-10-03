@@ -29,15 +29,15 @@ ActiveRecord::Schema.define(version: 2018_10_02_172615) do
     t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image"
     t.string "city"
     t.string "state"
     t.string "address"
     t.float "rating"
+    t.string "image"
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.float "rating"
+    t.integer "rating"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
