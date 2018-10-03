@@ -1,19 +1,36 @@
 <h2><%= @listing.name %></h2> <br>
-<p>
-  <%= image_tag(@listing.image_url.to_s) %><br><br>
+
+
+      <%= image_tag(@listing.image_url.to_s) %><br><br>
+
+<b>Listing details:</b><br>
   Price: $<%= @listing.price %><br>
   State: <%= @listing.state %><br>
   City: <%= @listing.city %><br>
   Address: <%= @listing.address %><br>
-  Owner: <%=link_to @listing.user.name, @listing.user %> <br>
+  Owner: <%=link_to @listing.user.name, @listing.user %> <br><br>
+  <b>Reviews:</b> <% @listing.reviews.each do |review| %><br>
+            Review by: <%= review.user.name %><br>
+            Rating: <%= review.rating %><br>
+            Description: <%= review.description %><br>
+            <% end %>
   <br>
-  <%= link_to "All listings", listings_path %> |
 
-  <p><%= button_to 'Book This Place', '/bookings/new', params: {listing_id: @listing.id}  %></p>
-</p>
+<% if current_user != @listing.user && current_user %>
+  <p><%= link_to 'Write A Review', new_review_path(flash[:listing_id] = @listing.id) %></p>
+<% end %>
 
-  <%= link_to "Go back to all listings", listings_path %><br>
+<% if current_user != @listing.user && current_user %>
+  <%=button_to 'Book This Place', '/bookings/new', params: {listing_id: @listing.id}, class: "ui large basic blue button"
+  %><br>
+<% end %>
 
-  <% if current_user == @listing.user %>
-    <%= link_to "Delete this listing", @listing, method: :delete, data: { confirm: 'Are you sure you would like to delete this listing?'} %></br>
-  <% end %>
+<%= link_to "Go back to all listings", listings_path %><br>
+
+<% if current_user == @listing.user %>
+<%= link_to "Edit this listing", edit_listing_path %><br>
+<% end %>
+
+<% if current_user == @listing.user %>
+  <%= link_to "Delete this listing", @listing, method: :delete, data: { confirm: 'Are you sure you would like to delete this listing?'} %></br>
+<% end %>

@@ -5,4 +5,11 @@
     Dates: <%=@check_in%> to <%= @check_out %>
   </p>
 
-  <%= link_to "Home", '/' %>
+<h2>Congratulations You're All Booked!</h2>
+<h2><%= @listing.name %></h2> <br>
+<p>
+  Price: $<%= @listing.price %><br>
+  Dates: <%=@check_in%> to <%= @check_out %>
+</p>
+
+<%= link_to "Home", '/' %>
