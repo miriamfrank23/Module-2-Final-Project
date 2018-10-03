@@ -6,8 +6,15 @@
   City: <%= @listing.city %><br>
   Address: <%= @listing.address %><br>
   Owner: <%=link_to @listing.user.name, @listing.user %> <br>
+  Reviews: <% @listing.reviews.each do |review| %><br>
+            Review by: <%= review.user.name %><br>
+            Review Rating: <%= review.rating %><br>
+            Review Description: <%= review.description %><br>
+            <% end %>
   <br>
-  <%= link_to "All listings", listings_path %> |
+  <%= link_to "All listings", listings_path %>
+
+  <p><%= link_to 'Write A Review', new_review_path(flash[:listing_id] = @listing.id) %></p>
 
   <p><%= button_to 'Book This Place', '/bookings/new', params: {listing_id: @listing.id}  %></p>
 </p>

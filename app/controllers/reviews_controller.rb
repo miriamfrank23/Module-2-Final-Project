@@ -16,9 +16,11 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.new(review_params)
+    @user = User.find_by(id: session[:user_id])
+    @review = Review.create(rating: review_params[:rating], description: review_params[:description], user_id: @user.id, listing_id: flash[:listing_id])
     if @review.valid?
-      redirect_to @review
+      @listing = Listing.find_by(id: flash[:listing_id])
+      redirect_to listing_path(@listing)
     else
       flash[:error] = @review.errors.full_messages
       redirect_to new_review_path
@@ -26,15 +28,22 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-
+    @ratings = [1,2,3,4,5]
   end
 
   def update
-
+    @review.update(review_params)
+    if @review.valid?
+      redirect_to @review
+    else
+      flash[:error] = @review.errors.full_messages
+      redirect_to edit_review_path
+    end
   end
 
   def destroy
     @review.destroy
+    redirect_to reviews_path
   end
 
 private
