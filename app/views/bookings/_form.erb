@@ -1,4 +1,7 @@
+<h3> Hey <%= @user.name %>! You're all set to book <%=@listing_name%>!  Just select your check-in and check-out dates below!</h3>
+
 <%= form_for @booking do |f|%>
+
 
 
 <p> Check in Date:
@@ -6,6 +9,22 @@
 </p>
 
 <p> Check out Date:
-<%=   date_select("booking", "check_in_date", start_year: 2018, prompt: { day: 'Select day', month: 'Select month', year: 'Select year' })  %>
+<%=   date_select("booking", "check_out_date", start_year: 2018, prompt: { day: 'Select day', month: 'Select month', year: 'Select year' })  %>
 </p>
+
+<p> <%= f.submit "Check Availability" %>
+</p>
+
+<p>Reference Number : <%= @booking %>
+</p>
+
+<%= hidden_field_tag 'listing_id', @listing.id  %>
+<%= hidden_field_tag 'user_id', @user.id  %>
+<%= hidden_field_tag 'matched_user_id', @owner.id  %>
+
+
+<p> <%= @user.name %>, don't forget! If you have any questions please contact <%=@owner.name%>!  Just click here to send your message!
+<%= link_to "Contact Owner", listings_path %>
+</p>
+
 <% end %>

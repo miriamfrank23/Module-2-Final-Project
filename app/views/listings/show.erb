@@ -7,5 +7,7 @@
   Address: <%= @listing.address %><br>
   Owner: <%=link_to @listing.user.name, @listing.user %> <br>
   <br>
-  <%= link_to "Go back to all listings", listings_path %>
+  <%= link_to "All listings", listings_path %> |
+
+  <p><%= button_to 'Book This Place', '/bookings/new', params: {listing_id: @listing.id}  %></p>
 </p>

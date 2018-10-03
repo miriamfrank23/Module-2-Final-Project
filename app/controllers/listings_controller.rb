@@ -2,7 +2,6 @@ class ListingsController < ApplicationController
   before_action :find_listing, only: [:show, :edit, :update, :destroy]
   # before_action :require_login
   # skip_before_action :require_login, only: [:index, :show]
-
   def index
     if params[:state]
       if params[:state].length != 2
@@ -89,7 +88,7 @@ private
   end
 
   def listing_params
-    params.require(:listing).permit(:name, :user_id, :price, :image, :state, :city, :address)
+    params.require(:listing).permit(:name, :user_id, :price, :image, :state, :city, :address, :listing_id)
   end
 
 end
