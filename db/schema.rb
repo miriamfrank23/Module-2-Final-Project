@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 2018_10_02_172615) do
     t.integer "listing_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image"
   end
 
   create_table "users", force: :cascade do |t|
