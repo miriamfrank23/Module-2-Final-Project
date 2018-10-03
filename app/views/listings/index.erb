@@ -12,3 +12,10 @@
 <%= image_tag(listing.image_url(:thumb).to_s) %><br>
 <%= link_to listing.name, listing %><br><br>
 <% end %>
+
+
+<% if current_user %>
+<%= link_to "Logout", logout_path, method: :delete %>
+<% else %>
+<%= link_to 'Login', login_path %>
+<% end %>

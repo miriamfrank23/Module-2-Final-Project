@@ -7,7 +7,16 @@
   Address: <%= @listing.address %><br>
   Owner: <%=link_to @listing.user.name, @listing.user %> <br>
   <br>
+<<<<<<< HEAD
   <%= link_to "All listings", listings_path %> |
 
   <p><%= button_to 'Book This Place', '/bookings/new', params: {listing_id: @listing.id}  %></p>
+=======
+>>>>>>> 1f0867835f84c4be4650e9327a05d270d96d6781
 </p>
+
+  <%= link_to "Go back to all listings", listings_path %><br>
+
+  <% if current_user == @listing.user %>
+    <%= link_to "Delete this listing", @listing, method: :delete, data: { confirm: 'Are you sure you would like to delete this listing?'} %></br>
+  <% end %>
