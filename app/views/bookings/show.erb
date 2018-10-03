@@ -1,6 +1,9 @@
+
+<h1>Congratulations You're All Booked!</h1>
 <h2><%= @listing.name %></h2> <br>
 <p>
   Price: $<%= @listing.price %><br>
-  Owner: <%=link_to @listing.user.name, @listing.user %> <br>
-  <%= link_to "listings", listings_ %>
+  Dates: <%=@check_in%> to <%= @check_out %>
 </p>
+
+<%= link_to "Home", '/' %>

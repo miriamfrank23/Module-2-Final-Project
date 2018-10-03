@@ -1,5 +1,12 @@
 {
   "name": "project",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "flatpickr": "^4.5.2",
+    "jquery": "^3.3.1",
+    "jquery-ui": "^1.12.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.20.2"
+  }
 }
