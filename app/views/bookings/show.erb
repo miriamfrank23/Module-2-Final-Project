@@ -1,9 +1,8 @@
+  <h1>Congratulations You're All Booked!</h1>
+  <h2><%= @listing.name %></h2> <br>
+  <p>
+    Price: $<%= @listing.price %><br>
+    Dates: <%=@check_in%> to <%= @check_out %>
+  </p>
 
-<h1>Congratulations You're All Booked!</h1>
-<h2><%= @listing.name %></h2> <br>
-<p>
-  Price: $<%= @listing.price %><br>
-  Dates: <%=@check_in%> to <%= @check_out %>
-</p>
-
-<%= link_to "Home", '/' %>
+  <%= link_to "Home", '/' %>
