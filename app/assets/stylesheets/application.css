@@ -15,7 +15,7 @@
  */
 
 
- h1 {
+h1 {
    text-align: justify;
  }
 
@@ -36,6 +36,7 @@ p {
  text-align: center;
 }
 
-span {
- text-align: center;
+li {
+  width: 70%;
+  margin: auto;
 }
