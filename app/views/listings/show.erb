@@ -3,25 +3,27 @@
 
       <%= image_tag(@listing.image_url.to_s) %><br><br>
 
-
+<b>Listing details:</b><br>
   Price: $<%= @listing.price %><br>
   State: <%= @listing.state %><br>
   City: <%= @listing.city %><br>
   Address: <%= @listing.address %><br>
-  Owner: <%=link_to @listing.user.name, @listing.user %> <br>
-  Reviews: <% @listing.reviews.each do |review| %><br>
+  Owner: <%=link_to @listing.user.name, @listing.user %> <br><br>
+  <b>Reviews:</b> <% @listing.reviews.each do |review| %><br>
             Review by: <%= review.user.name %><br>
-            Review Rating: <%= review.rating %><br>
-            Review Description: <%= review.description %><br>
+            Rating: <%= review.rating %><br>
+            Description: <%= review.description %><br>
             <% end %>
   <br>
-  <%= link_to "All listings", listings_path %>
 
+<% if current_user != @listing.user %>
   <p><%= link_to 'Write A Review', new_review_path(flash[:listing_id] = @listing.id) %></p>
+<% end %>
 
-
+<% if current_user != @listing.user %>
   <%=button_to 'Book This Place', '/bookings/new', params: {listing_id: @listing.id}, class: "ui large basic blue button"
   %><br>
+<% end %>
 
 
   <%= link_to "Go back to all listings", listings_path %><br>
