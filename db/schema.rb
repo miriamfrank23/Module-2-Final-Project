@@ -10,12 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2018_10_02_172615) do
-=======
-ActiveRecord::Schema.define(version: 2018_10_01_194942) do
 
->>>>>>> 4a9a7c6eabedb0b13dbc1bd52466c3a3cd65efb8
+ActiveRecord::Schema.define(version: 2018_10_01_194942) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer "user_id"
@@ -36,25 +32,22 @@ ActiveRecord::Schema.define(version: 2018_10_01_194942) do
     t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< HEAD
     t.string "image"
-=======
->>>>>>> 4a9a7c6eabedb0b13dbc1bd52466c3a3cd65efb8
     t.string "city"
     t.string "state"
     t.string "address"
     t.float "rating"
-<<<<<<< HEAD
+    t.string "image"
+
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.float "rating"
+    t.integer "rating"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-=======
     t.string "image"
->>>>>>> 4a9a7c6eabedb0b13dbc1bd52466c3a3cd65efb8
+
   end
 
   create_table "users", force: :cascade do |t|

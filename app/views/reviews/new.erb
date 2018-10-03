@@ -1,0 +1,10 @@
+<%= form_tag @review do %>
+  <label>Rating:</label><br>
+  <%= select_tag :rating, options_for_select(@ratings) %>
+</br>
+
+  <label>Description</label><br>
+  <%= text_area_tag :description %><br>
+
+  <%= submit_tag "Submit Post" %>
+<% end %>
