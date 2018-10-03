@@ -19,7 +19,6 @@ class ListingsController < ApplicationController
            flash[:notice] = "No Matches in That State"
            redirect_to listings_path
          end
-
        end
    else
      @listings = Listing.all.uniq
@@ -89,7 +88,13 @@ private
   end
 
   def listing_params
+<<<<<<< HEAD
     params.require(:listing).permit(:name, :user_id, :price, :image, :state, :city, :address, :listing_id)
+=======
+
+    params.require(:listing).permit(:name, :user_id, :price, :image)
+
+>>>>>>> 4a9a7c6eabedb0b13dbc1bd52466c3a3cd65efb8
   end
 
 end
