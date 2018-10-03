@@ -68,3 +68,5 @@ gem 'mini_magick' # For different versions of an image
 
 #security
 gem 'bcrypt'
+gem 'jquery-rails'
+gem 'momentjs-rails'
