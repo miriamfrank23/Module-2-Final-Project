@@ -12,10 +12,11 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    @ratings = [1,2,3,4,5]
   end
 
   def create
-    @review = Review.create(review_params)
+    @review = Review.new(review_params)
     if @review.valid?
       redirect_to @review
     else
@@ -33,7 +34,7 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-
+    @review.destroy
   end
 
 private
