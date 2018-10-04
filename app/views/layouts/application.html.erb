@@ -18,7 +18,7 @@
         <%= link_to "All listings", listings_path %> |
             <%= link_to "View profile", current_user %> |
             <a href=" https://www.airbnb.com/">Recommended spots </a> |
-            <a>Last-minute deals</a> |
+            <%= link_to "Last Minute Deals", listings_deals_path %> |
             <%= link_to "Logout", logout_path, method: :delete %>
           <% else %>
             <%= link_to "All listings", listings_path %> |

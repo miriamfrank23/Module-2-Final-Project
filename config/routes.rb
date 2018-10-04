@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'sessions/new'
   get '/', :to => 'listings#index'
+  get '/listings/deals', to: 'listings#deals'
+
   resources :listings
   resources :bookings
   resources :users
