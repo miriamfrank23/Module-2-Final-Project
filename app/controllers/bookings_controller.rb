@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   before_action :find_booking, only: [:edit, :show, :update, :destroy]
 
   def show
-    byebug
+  
 
     if params[:listing_id]
       @confirmation_num = @booking

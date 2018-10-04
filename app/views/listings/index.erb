@@ -1,29 +1,46 @@
-
-<h2>All listings</h2>
-
-<h3> <%= render 'errors' %>
-</h3>
-<br>
-
-
-<div class="ui large icon input">
-  <%= form_tag(listings_path, method: :get) do %>
-   Search for a listing by state <br>
-   <%= text_field_tag :state, nil, placeholder: "NY, CA, etc." %>  <%= submit_tag 'Search'  %> <br> <br>
-  <% end %>
-  <i class="search icon"></i>
-</div>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
 
 
-<% @listings.each do |listing| %>
-    <%= image_tag(listing.image_url(:thumb).to_s) %><br>
-<p>
-<%= link_to listing.name, listing %><br><br>
-<% end %>
-</p>
+    <h2 class="title">All listings</h2>
 
-<% if current_user %>
-<%= link_to "Logout", logout_path, method: :delete %>
-<% else %>
-<%= link_to 'Login', login_path %>
-<% end %>
+    <h3> <%= render 'errors' %>
+    </h3>
+    <br>
+
+    <div>
+      <%= form_tag(listings_path, method: :get) do %>
+       <div>
+         Search for a listing by state
+       </div>
+       <br>
+       <%= text_field_tag :state, nil, placeholder: "NY, CA, etc." %>  <%= submit_tag 'Search'  %> <br> <br>
+      <% end %>
+    </div>
+
+    <% if current_user %>
+      <%= link_to "Logout", logout_path, method: :delete %>
+      <% else %>
+      <%= link_to 'Login', login_path %>
+      <% end %>
+
+    <div class="listings_container">
+    <% @listings.each do |listing| %>
+      <div class="listing_card">
+        <div class="listing_card_img">
+          <%= image_tag((listing.image_url(:thumb).to_s), :class => "card_img") %>
+        </div>
+        <div class="listing_card_name">
+          <%= link_to listing.name, listing %>
+        </div>
+      </div>
+    <% end %>
+    </div>
+
+  </body>
+</html>

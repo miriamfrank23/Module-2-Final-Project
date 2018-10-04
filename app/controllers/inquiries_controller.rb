@@ -1,7 +1,7 @@
 class InquiriesController < ApplicationController
 
   def new
-    byebug
+    
     @inquiry = Inquiry.new
     @listing = Listing.find(session[:listing_id])
     @user = User.find(session[:user_id])

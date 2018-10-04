@@ -1,7 +1,20 @@
 <%= form_for @review do |f| %>
+
   <%= f.label :rating %><br>
   <%= f.select :rating, options_for_select(@ratings) %><br>
+
   <%= f.label :Review %><br>
+<<<<<<< HEAD
+<<<<<<< HEAD
+  <%= f.text_area :description, class: "" %><br>
+
+=======
   <%= f.text_area :description %><br>
+>>>>>>> 969d97502c20886681e259d24424b561d1de6343
+=======
+  <%= f.text_area :description %><br>
+
+>>>>>>> 0416583ff7a1bd33e811f2a074541a4c7544c29c
   <%= f.submit "Submit Post" %>
+
 <% end %>
