@@ -4,7 +4,7 @@
 
 <%= form_for :user, url: '/users' do |f| %>
 
-  <%= f.label :name %>
+  <div class="form_label"><%= f.label :name %></>
   <%= f.text_field :name %><br>
 
   <%= f.label :email %>

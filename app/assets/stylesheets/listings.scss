@@ -1,3 +1,42 @@
 // Place all the styles related to the listings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.listings_container{
+  width: 85%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  // border: black 1px solid;
+  padding-bottom: 20px;
+}
+
+.listing_card{
+  // border: black 1px solid;
+  width: 30%;
+  margin: auto;
+  height: 300px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.listing_card_img{
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.card_img{
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%
+}
+
+.listing_card_name{
+  margin-top: 5%;
+  font-size: 20px;
+}
