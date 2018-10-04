@@ -12,7 +12,7 @@
   <%=   date_select("booking", "check_out_date", start_year: 2018, prompt: { day: 'Select day', month: 'Select month', year: 'Select year' })  %>
   </p>
 
-  <p> <%= f.submit "Check Availability" %>
+  <p> <%= f.submit "Check Availability", class: "btn" %>
   </p>
 
   <p>Reference Number : <%= @booking %>

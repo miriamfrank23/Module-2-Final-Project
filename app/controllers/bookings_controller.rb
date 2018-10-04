@@ -12,7 +12,6 @@ class BookingsController < ApplicationController
       @check_in = "#{eval(@booking.check_in_date)[2]}/#{eval(@booking.check_in_date)[3]}/#{eval(@booking.check_in_date)[1]} "
       @check_out = "#{eval(@booking.check_out_date)[2]}/#{eval(@booking.check_out_date)[3]}/#{eval(@booking.check_out_date)[1]} "
     else
-      byebug
       @listing = Listing.find(session[:listing_id])
       @price = Booking.find(session[:booking_id]).total
       @listing_name = @listing.name

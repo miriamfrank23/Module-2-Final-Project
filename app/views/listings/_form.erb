@@ -7,23 +7,23 @@
 <%= form_for @listing do |f| %>
 
   <%= f.label :name %>:
-  <%= f.text_field :name %>
+  <%= f.text_field :name, class: "search_bar" %>
 
   <%= f.label :price %>:
-  <%= f.text_field :price %>
+  <%= f.text_field :price, class: "search_bar"%>
 
   <%= f.label :state %>:
-  <%= select_tag "state", options_for_select(@states) %>
+  <%= select_tag "state", options_for_select(@states), class: "dropdown"  %>
 
   <%= f.label :city %>:
-  <%= f.text_field :city %>
+  <%= f.text_field :city, class: "search_bar"  %>
 
   <%= f.label :address %>:
-  <%= f.text_field :address %>
+  <%= f.text_field :address, class: "search_bar"%><br>
 
   <label>Upload a photo of your listing:</label>
-   <%= f.file_field :image %><br><br>
+   <%= f.file_field :image%><br><br>
 
-  <%= f.submit %>
+  <%= f.submit class: "btn"%>
 
 <% end %>

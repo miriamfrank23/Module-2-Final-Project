@@ -7,12 +7,12 @@
 <%= form_for(:session, url: login_path) do |f| %>
 
   <%= f.label :email %>
-  <%= f.email_field :email %>
+  <%= f.email_field :email, class: "search_bar" %>
 
   <%= f.label :password %>
-  <%= f.password_field :password %>
+  <%= f.password_field :password, class: "search_bar" %>
 
-  <%= f.submit "Log in" %>
+  <%= f.submit "Log in", class: "btn" %>
 
 <% end %>
 

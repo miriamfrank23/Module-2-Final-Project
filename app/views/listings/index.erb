@@ -19,7 +19,7 @@
          Search for a listing by state
        </div>
        <br>
-       <%= text_field_tag :state, nil, placeholder: "NY, CA, etc." %>  <%= submit_tag 'Search'  %> <br> <br>
+       <%= text_field_tag :state, nil, placeholder: "NY, CA, etc.", class: "search_bar" %>  <%=submit_tag 'Search', :class => "btn" %>
       <% end %>
     </div>
 

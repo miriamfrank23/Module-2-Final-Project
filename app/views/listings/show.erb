@@ -1,4 +1,3 @@
-
 <h2><%= @listing.name %></h2> <br>
 
   <%= render 'errors' %>
@@ -12,7 +11,7 @@
   Owner: <%=link_to @listing.user.name, @listing.user %> <br><br>
   <b>Reviews:</b> <% @listing.reviews.each do |review| %><br>
             Review by: <%= review.user.name %><br>
-            Rating: <%= review.rating %><br>
+            Rating: <%= review.rating %>/5<br>
             Description: <%= review.description %><br>
     <% if current_user && current_user.name == review.user.name %>
     <%= link_to 'Edit this review', edit_review_path %> |
@@ -26,8 +25,7 @@
 <% end %>
 
 <% if current_user != @listing.user && current_user %>
-  <%=button_to 'Book this place', '/bookings/new', params: {listing_id: @listing.id}, class: "ui large basic blue button"
-  %><br>
+  <%=button_to 'Book this place', '/bookings/new', params: {listing_id: @listing.id}, class: "btn"%>
 <% end %>
 
 

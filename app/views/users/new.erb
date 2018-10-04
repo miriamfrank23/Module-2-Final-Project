@@ -4,18 +4,18 @@
 
 <%= form_for :user, url: '/users' do |f| %>
 
-  <div class="form_label"><%= f.label :name %></>
-  <%= f.text_field :name %><br>
+  <%= f.label :name %></>
+  <%= f.text_field :name, class: "search_bar" %><br><br>
 
   <%= f.label :email %>
-  <%= f.text_field :email %><br>
+  <%= f.text_field :email, class: "search_bar" %><br><br>
 
   <%= f.label :password %>
-  <%= f.password_field :password %><br>
+  <%= f.password_field :password, class: "search_bar" %><br><br>
 
   <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %><br>
+  <%= f.password_field :password_confirmation, class: "search_bar" %><br><br>
 
-  <%= f.submit%>
+  <%= f.submit class: "btn" %>
 
 <% end %>
