@@ -6,19 +6,19 @@
 
 <%= form_for @listing do |f| %>
 
-  <%= f.label :name %>
+  <%= f.label :name %>:
   <%= f.text_field :name %>
 
-  <%= f.label :price  %>
+  <%= f.label :price %>:
   <%= f.text_field :price %>
 
-  <%= f.label :state %>
+  <%= f.label :state %>:
   <%= select_tag "state", options_for_select(@states) %>
 
-  <%= f.label :city %>
+  <%= f.label :city %>:
   <%= f.text_field :city %>
 
-  <%= f.label :address %>
+  <%= f.label :address %>:
   <%= f.text_field :address %>
 
   <label>Upload a photo of your listing:</label>

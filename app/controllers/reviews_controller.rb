@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    flash[:notice] =
+    flash[:notice]
   end
 
   def new
@@ -29,12 +29,14 @@ class ReviewsController < ApplicationController
 
   def edit
     @ratings = [1,2,3,4,5]
+    @listing = Listing.find_by(id: params[:id])
+    @review = Review.find_by(user_id: current_user.id, listing_id: @listing.id)
   end
 
   def update
     @review.update(review_params)
     if @review.valid?
-      redirect_to @review
+      redirect_to listing_path(@review.listing)
     else
       flash[:error] = @review.errors.full_messages
       redirect_to edit_review_path
@@ -42,8 +44,9 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @review.destroy
-    redirect_to reviews_path
+    @listing = Listing.find_by(id: params[:id])
+    Review.where(user_id: current_user.id, listing_id: @listing.id).destroy_all
+    redirect_to @listing
   end
 
 private
