@@ -23,7 +23,7 @@
   <%= hidden_field_tag 'matched_user_id', @owner.id  %>
 
   <p> <%= @user.name %>, don't forget! If you have any questions please contact <%=@owner.name%>!  Just click here to send your message!
-  <%= link_to "Contact Owner", listings_path %>
+  <%= link_to "Contact Owner", new_inquiry_path, :listing_id => @listing.id, :user_id => @user.id, :owner_id => @owner.id %>
   </p>
 
 <% end %>

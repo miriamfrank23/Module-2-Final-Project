@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_02_172615) do
+ActiveRecord::Schema.define(version: 2018_10_03_234421) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer "user_id"
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(version: 2018_10_02_172615) do
     t.index ["matched_user_id"], name: "index_bookings_on_matched_user_id"
     t.index ["user_id", "matched_user_id"], name: "index_bookings_on_user_id_and_matched_user_id", unique: true
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "inquiries", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "listing_id"
+    t.string "content"
   end
 
   create_table "listings", force: :cascade do |t|

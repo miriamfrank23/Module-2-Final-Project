@@ -26,6 +26,7 @@ class ListingsController < ApplicationController
   end
 
   def show
+    flash[:notice] = "We delivered your inquiry to the owner! Get back to exploring!"
   end
 
   def new

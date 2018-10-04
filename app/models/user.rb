@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :matched_users, through: :bookings
   has_many :listings
   has_many :reviews
+  has_many :inquiries
 
 
   has_secure_password

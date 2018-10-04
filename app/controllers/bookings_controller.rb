@@ -33,6 +33,9 @@ class BookingsController < ApplicationController
       @user = User.find(session[:user_id])
       @listing_name = @listing.name
       @owner = User.find(@listing.user_id)
+      session[:listing_id] = @listing.id
+      session[:owner_id] = @owner.id
+      session[:user_id] = @user.id
 
     else
 
