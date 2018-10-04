@@ -17,7 +17,6 @@ class InquiriesController < ApplicationController
 
     if @inquiry.valid?
       flash[:notice] = "We delivered your inquiry to the owner! Get back to exploring!"
-
       @listing = Listing.find(@inquiry.listing_id)
       redirect_to @listing
     else
