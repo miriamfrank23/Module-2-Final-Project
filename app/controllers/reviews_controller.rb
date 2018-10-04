@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
   end
 
   def show
-
+    flash[:notice] =
   end
 
   def new

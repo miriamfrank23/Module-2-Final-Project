@@ -1,6 +1,7 @@
+
 <h2><%= @listing.name %></h2> <br>
 
-
+  <%= render 'errors' %>
       <%= image_tag(@listing.image_url.to_s) %><br><br>
 
 <b>Listing details:</b><br>
@@ -25,7 +26,6 @@
   %><br>
 <% end %>
 
-<%= link_to "Go back to all listings", listings_path %><br>
 
 <% if current_user == @listing.user %>
 <%= link_to "Edit this listing", edit_listing_path %><br>

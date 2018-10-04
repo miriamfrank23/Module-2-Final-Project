@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :bookings
   resources :users
   resources :reviews
+  resources :inquiries, only: [:new, :create]
   post '/bookings/new', to: 'bookings#new'
   get    '/signup',  to: 'users#new'
   get    '/login',   to: 'sessions#new'
