@@ -11,21 +11,23 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
   </head>
   <body>
-      <div id="logo">StayHero</div>
+      <div id="logo"> StayHero <%= image_tag("home2.png") %></div>
+
       <div id="navBar">
 
         <% if current_user %>
-        <%= link_to "All listings", listings_path %> |
-            <%= link_to "View profile", current_user %> |
-            <a href=" https://www.airbnb.com/">Recommended spots </a> |
-            <%= link_to "Last Minute Deals", listings_deals_path %> |
+        <%= link_to "All listings", listings_path %> <span class="bar"> |</span>
+            <%= link_to "View profile", current_user %> <span class="bar"> |</span>
+            <a style="text-decoration:none" href=" https://www.airbnb.com/">Recommended spots </a> <span class="bar"> |</span>
+            <%= link_to "Last Minute Deals", listings_deals_path %> <span class="bar"> |</span>
             <%= link_to "Logout", logout_path, method: :delete %>
           <% else %>
-            <%= link_to "All listings", listings_path %> |
+            <%= link_to "All listings", listings_path %> <span class="bar"> |</span>
             <%= link_to "Login", login_path %>
           <% end %>
 
       </div>
+
     <div id="body">
       <%= yield %>
     </div>

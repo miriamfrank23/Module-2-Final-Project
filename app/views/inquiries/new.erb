@@ -3,7 +3,7 @@
     <p>
       <% hidden_field_tag 'user_id', @user.id  %>
       <% hidden_field_tag 'listing_id', @listing.id  %>
-      <%= f.text_area :content %><br>
+      <%= f.text_area :content, class: "text_box"%><br>
       <%= f.submit "Send", class: "btn"%>
     </p>
   <% end %>
