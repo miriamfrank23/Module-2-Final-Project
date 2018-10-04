@@ -1,6 +1,6 @@
 <% if flash[:error] %>
   <% flash[:error].each do |error| %>
-  <%= error %><br><br>
+    <%= error %><br><br>
   <% end %>
 <% end %>
 
@@ -9,7 +9,7 @@
   <%= f.label :name %>
   <%= f.text_field :name %>
 
-  <%= f.label :price %>
+  <%= f.label :price  %>
   <%= f.text_field :price %>
 
   <%= f.label :state %>

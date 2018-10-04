@@ -1,17 +1,48 @@
 <h2><%= @user.name %></h2> <br>
 
-<ul>
-<p>
-    <b>Properties:</b><% @user.listings.each do |listing| %><br><br>
-    <li><%=link_to listing.name, listing %></li>
-    <%= image_tag(listing.image_url(:thumb).to_s) %><br>
-    <% end %>
-</p>
-</ul>
 
 <p>
   <% if current_user == @user %>
   <%= link_to "Add a listing", new_listing_path %></br><br>
-  <%= link_to "Logout", logout_path, method: :delete %>
+  <%= link_to "Logout", logout_path, method: :delete %> <br>
+
+    <ul>
+      <p>
+        <h3>My Properties:</h3>
+          <% @user.listings.each do |listing| %><br><br>
+          <li><%=link_to listing.name, listing %></li>
+          <%= image_tag(listing.image_url(:thumb).to_s) %><br>
+          <% end %>
+      </p>
+    </ul>
+
+      <h3> My Bookings </h3>
+      <ul>
+        <% @user.bookings.each do |booking| %> <br> <br>
+        <li>Booking # <%=booking.id  %></li>
+        <%= byebug %>
+          <p>
+            Name: <%=  Listing.find(booking.listing_id).name %> <br>
+            Total: $<%= booking.total %> <br>
+            Check-In: <%= booking.check_in_date %> <br>
+            Check-Out: <%= booking.check_out_date %> <br>
+            Owner: <%= User.find(booking.matched_user_id).name %> <br>
+          </p>
+        <% end %>
+      </ul>
+
+  <% else %>
+    <ul>
+      <p>
+        <h3>Properties:</h3>
+
+        <% @user.listings.each do |listing| %><br><br>
+          <li><%=link_to listing.name, listing %></li>
+          <%= image_tag(listing.image_url(:thumb).to_s) %><br>
+        <% end %>
+      </p>
+    </ul>
   <% end %>
+
+
  </p>

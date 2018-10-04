@@ -2,18 +2,19 @@ class BookingsController < ApplicationController
   before_action :find_booking, only: [:edit, :show, :update, :destroy]
 
   def show
-  
+
 
     if params[:listing_id]
       @confirmation_num = @booking
       @listing = Listing.find(@booking.listing_id)
-      @price = @listing.price
+      @price = @booking.total
       @listing_name = @listing.name
       @check_in = "#{eval(@booking.check_in_date)[2]}/#{eval(@booking.check_in_date)[3]}/#{eval(@booking.check_in_date)[1]} "
       @check_out = "#{eval(@booking.check_out_date)[2]}/#{eval(@booking.check_out_date)[3]}/#{eval(@booking.check_out_date)[1]} "
     else
+      byebug
       @listing = Listing.find(session[:listing_id])
-      @price = @listing.price
+      @price = Booking.find(session[:booking_id]).total
       @listing_name = @listing.name
       @check_in = session[:check_in_date]
       @check_out = session[:check_out_date]
@@ -66,7 +67,8 @@ class BookingsController < ApplicationController
     @booking.check_in_date = @check_in
     @booking.check_out_date = @check_out
 
-    if @booking.valid?
+    if @booking.save
+
       session[:listing_id] = @listing_id
       session[:booking_id] = @booking.id
       session[:matched_user_id] = @booking.matched_user_id

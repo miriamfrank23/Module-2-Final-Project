@@ -28,7 +28,10 @@ class ListingsController < ApplicationController
 
 
   def show
-    flash[:notice] = "We delivered your inquiry to the owner! Get back to exploring!"
+  
+    if flash[:notice]
+        flash[:notice] = "We delivered your inquiry to the owner! Get back to exploring!"
+    end
   end
 
   def new

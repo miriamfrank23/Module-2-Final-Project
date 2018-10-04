@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_03_234421) do
+ActiveRecord::Schema.define(version: 2018_10_03_234422) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer "user_id"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2018_10_03_234421) do
     t.integer "listing_id"
     t.string "check_in_date"
     t.string "check_out_date"
+    t.integer "total"
     t.index ["matched_user_id"], name: "index_bookings_on_matched_user_id"
     t.index ["user_id", "matched_user_id"], name: "index_bookings_on_user_id_and_matched_user_id", unique: true
     t.index ["user_id"], name: "index_bookings_on_user_id"
