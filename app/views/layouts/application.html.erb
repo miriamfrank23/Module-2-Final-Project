@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Project</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+    <title>Shitty Airbnb</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   </head>
-   <h1>Shitty Airbnb</h1>
   <body>
+    <div id="navBar">
 
-    <%= yield %>
+      <div id="logo">Shitty Airbnb</div>
+    </div>
+    <div id="body">
+      <%= yield %>
+    </div>
   </body>
 </html>
