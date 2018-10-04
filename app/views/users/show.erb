@@ -1,17 +1,14 @@
 <h2><%= @user.name %></h2> <br>
 
-<ul>
 <p>
     <b>Properties:</b><% @user.listings.each do |listing| %><br><br>
-    <li><%=link_to listing.name, listing %></li>
+    <%=link_to listing.name, listing %>
     <%= image_tag(listing.image_url(:thumb).to_s) %><br>
     <% end %>
 </p>
-</ul>
 
 <p>
   <% if current_user == @user %>
   <%= link_to "Add a listing", new_listing_path %></br><br>
-  <%= link_to "Logout", logout_path, method: :delete %>
   <% end %>
  </p>

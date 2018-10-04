@@ -3,7 +3,6 @@ class ListingsController < ApplicationController
   # before_action :require_login
   # skip_before_action :require_login, only: [:index, :show]
   def index
-    @user = User.find(session[:user_id])
     if params[:state]
       if params[:state].length != 2
        flash[:notice] = "Please enter a state abbreviation! (NY, NJ, CA)"

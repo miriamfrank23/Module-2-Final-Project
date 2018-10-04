@@ -14,15 +14,19 @@
             Review by: <%= review.user.name %><br>
             Rating: <%= review.rating %><br>
             Description: <%= review.description %><br>
+    <% if current_user && current_user.name == review.user.name %>
+    <%= link_to 'Edit this review', edit_review_path %> |
+    <%= link_to 'Delete this review', review_path, method: :delete %>
+    <% end %>
             <% end %>
   <br>
 
 <% if current_user != @listing.user && current_user %>
-  <p><%= link_to 'Write A Review', new_review_path(flash[:listing_id] = @listing.id) %></p>
+  <p><%= link_to 'Write a review', new_review_path(flash[:listing_id] = @listing.id) %></p>
 <% end %>
 
 <% if current_user != @listing.user && current_user %>
-  <%=button_to 'Book This Place', '/bookings/new', params: {listing_id: @listing.id}, class: "ui large basic blue button"
+  <%=button_to 'Book this place', '/bookings/new', params: {listing_id: @listing.id}, class: "ui large basic blue button"
   %><br>
 <% end %>
 
