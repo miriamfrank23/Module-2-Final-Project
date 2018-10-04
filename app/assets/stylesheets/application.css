@@ -16,8 +16,8 @@
 
  html{
    margin: -8px -8px -8px -8px;
-   background-image: linear-gradient(to bottom, #006699, #99ddff, white, white, white, #b3e6ff);
-   height: 150vh;
+   background-image: linear-gradient(to bottom, #006699, #99ddff, white, white, #b3e6ff);
+   height: 200vh;
    font-family: 'Open Sans Condensed', sans-serif;
  }
 
@@ -26,8 +26,10 @@
   top: 0;
   left: 0;
   padding: 5px;
-  height: 25vh;
-
+  height: 8vh;
+  font-size: 30px;
+  border: black 3px dotted;
+  text-align: center;
 }
 
 #logo{
