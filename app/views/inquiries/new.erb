@@ -1,9 +1,9 @@
 <%= form_for @inquiry do |f| %>
-  <h2>What would you like to pass on to <%= @owner %> ?</h2>
+  <h2>What would you like to pass on to <%= @owner %>?</h2>
     <p>
       <% hidden_field_tag 'user_id', @user.id  %>
       <% hidden_field_tag 'listing_id', @listing.id  %>
-      <%= f.text_area :content %>
-      <%= f.submit "Send"%>
+      <%= f.text_area :content %><br>
+      <%= f.submit "Send", class: "btn"%>
     </p>
   <% end %>
