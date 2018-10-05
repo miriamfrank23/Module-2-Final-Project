@@ -13,22 +13,31 @@
  *= require_tree .
  *= require_self
  */
+html{
+  background-color: white;
+}
 
- html{
-   margin: -8px -8px -8px -8px;
-   background-image: linear-gradient(to bottom, #006699, #99ddff, white, white, #b3e6ff);
-   height: 200vh;
+ body{
+   background-image: linear-gradient(to bottom, #006699, #99ddff, #F8F3EF, #F8F3EF);
    font-family: 'Open Sans Condensed', sans-serif;
+   min-height: 100vh;
+   /* overflow: hidden; */
  }
 
 #navBar{
   position: relative;
   top: 0;
   left: 0;
-  padding: 5px;
+  padding: 10px;
   height: 5vh;
   font-size: 30px;
   text-align: center;
+  margin-top: 30px;
+}
+
+#navBar a:hover{
+  color: black;
+  font-weight: bold;
 }
 
 .bar{
@@ -49,10 +58,13 @@
   height: 20%;
   margin: 0;
   font-family: 'Lobster', cursive;
+  padding-left: 20px;
+  padding-top: 20px;
 }
 
 #body{
   text-align: center;
+  min-height: 100vh;
 }
 
 .page_header{
@@ -112,4 +124,16 @@
   border-width: 1px;
   border-color: darkgrey;
   border-radius: 5px;
+}
+
+.grass{
+  overflow-x: hidden;
+}
+.grass > img {
+  width: 110%;
+  height: 500px;
+  opacity: 0.15;
+  margin-left: -8px;
+  margin-top: -8px;
+  margin-bottom: -20px;
 }

@@ -2,7 +2,7 @@
 
 <%= render 'errors' %>
 
-<%= form_for :user, url: '/users' do |f| %>
+<div id="create_account"><%= form_for :user, url: '/users' do |f| %>
 
   <%= f.label :name %></>
   <%= f.text_field :name, class: "search_bar" %>
@@ -18,3 +18,4 @@
   <%= f.submit class: "btn" %>
 
 <% end %>
+</div>

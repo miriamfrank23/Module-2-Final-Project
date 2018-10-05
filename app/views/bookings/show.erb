@@ -1,9 +1,6 @@
-
-<h2>Congratulations You're All Booked!</h2>
-<h2><%= @listing.name %></h2> <br>
-<p>
+<div class="title">Congratulations You're All Booked!</div>
+<div id="sub_title"><%= @listing.name %></div> <br>
+<div class="all_set">
   Total: $<%= @price %><br>
   Dates: <%=@check_in%> to <%= @check_out %>
-</p>
-
-<%= link_to "Home", '/' %>
+</div>
