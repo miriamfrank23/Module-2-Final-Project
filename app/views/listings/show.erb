@@ -1,23 +1,34 @@
-<h2 class="page_header"><%= @listing.name %></h2> <br>
+<div class="listing_container">
 
-  <%= render 'errors' %>
-      <%= image_tag(@listing.image_url.to_s) %><br><br>
+  <div id="left">
+    <div id="listing_header"><%= @listing.name %></div>
+<%= render 'errors' %>
+    <div id="listing_image"><%= image_tag(@listing.image_url.to_s) %></div>
+  </div>
 
-<b>Listing details:</b><br>
-  Price per night: $<%= @listing.price %><br>
-  State: <%= @listing.state %><br>
-  City: <%= @listing.city %><br>
-  Address: <%= @listing.address %><br>
-  Owner: <%=link_to @listing.user.name, @listing.user %> <br><br>
-  <b>Reviews:</b> <% @listing.reviews.each do |review| %><br>
+  <div id="right">
+    Listing details:<br>
+    Price per night: $<%= @listing.price %><br>
+    State: <%= @listing.state %><br>
+    City: <%= @listing.city %><br>
+    Address: <%= @listing.address %><br>
+    <div class="listing_links"> Owner: <%=link_to @listing.user.name, @listing.user %></div>
+  </div>
+
+</div>
+
+  <div id="review"><div id="reviews_label">Reviews:</div> <% @listing.reviews.each do |review| %><br>
             Review by: <%= review.user.name %><br>
             Rating: <%= review.rating %>/5<br>
             Description: <%= review.description %><br>
     <% if current_user && current_user.name == review.user.name %>
-    <%= link_to 'Edit this review', edit_review_path %> |
-    <%= link_to 'Delete this review', review_path, method: :delete %>
+    <div class="listing_links"><%= link_to 'Edit this review', edit_review_path %></div> |
+    <div class="listing_links"><%= link_to 'Delete this review', review_path, method: :delete %></div>
     <% end %>
             <% end %>
+
+  </div>
+  <br>
   <br>
 
 <% if current_user != @listing.user && current_user %>
@@ -30,9 +41,9 @@
 
 
 <% if current_user == @listing.user %>
-<%= link_to "Edit this listing", edit_listing_path %><br>
+<div class="listing_links"><%= link_to "Edit this listing", edit_listing_path %></div><br>
 <% end %>
 
 <% if current_user == @listing.user %>
-  <%= link_to "Delete this listing", @listing, method: :delete, data: { confirm: 'Are you sure you would like to delete this listing?'} %></br>
+  <div class="listing_links"><%= link_to "Delete this listing", @listing, method: :delete, data: { confirm: 'Are you sure you would like to delete this listing?'} %></div></br>
 <% end %>
