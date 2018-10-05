@@ -8,12 +8,10 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  // border: black 1px solid;
   padding-bottom: 20px;
 }
 
 .listing_card{
-  // border: black 1px solid;
   width: 30%;
   margin: auto;
   height: 300px;
@@ -28,7 +26,9 @@
   align-items: center;
   overflow: hidden;
   border-radius: 40%;
-  box-shadow: 5px 5px lightgrey;
+  // box-shadow: 10px 5px black;
+  box-shadow:0 15px 14px -6px rgba(68, 68, 68, 0.6);
+  border: 1px white solid;
 }
 
 .card_img{
@@ -39,5 +39,15 @@
 
 .listing_card_name{
   margin-top: 5%;
-  font-size: 20px;
+  font-size: 25px;
+}
+
+.listing_card_name a{
+  text-decoration: none;
+  color: #006699;
+}
+
+.listing_card_name a:hover{
+  color: black;
+  font-weight: bold;
 }

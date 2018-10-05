@@ -1,38 +1,32 @@
-<h2><%= @user.name %></h2> <br>
+<h2 class="page_header"><%= @user.name %></h2>
 
-<p>
   <% if current_user == @user %>
-      <h2>My Properties</h2>
-          <% @user.listings.each do |listing| %><br><br>
-          <%= image_tag(listing.image_url(:thumb).to_s) %><br>
-          <%=link_to listing.name, listing %><br>
-          <% end %>
-      </p>
+    <h2 class="sub_header">My Properties</h2>
+      <% @user.listings.each do |listing| %>
+        <div><%= image_tag(listing.image_url(:thumb).to_s) %></div>
+        <div class="listing_links"><%=link_to listing.name, listing %></div><br><br>
+      <% end %>
 
-      <%= link_to "Add a listing", new_listing_path %></br><br>
+  <div id="add_listing"><%= link_to "Add a listing", new_listing_path %></div>
 
-      <h2> My Bookings </h2>
-        <% @user.bookings.each do |booking| %> <br> <br>
-          Booking # <%=booking.id  %>:
-          <p>
-            Name: <%=  Listing.find(booking.listing_id).name %> <br>
-            Total: $<%= booking.total %> <br>
-            Check-In: <%= booking.check_in_date %> <br>
-            Check-Out: <%= booking.check_out_date %> <br>
-            Owner: <%= User.find(booking.matched_user_id).name %> <br>
-          </p>
-        <% end %>
-
-
-  <% else %>
-      <p>
-        <h3>Properties:</h3>
+    <h2 class="sub_header"> My Bookings</h2>
+      <div id="bookings_info"><% @user.bookings.each do |booking| %>
+        Booking # <%=booking.id  %>:
+    <p>
+      Name: <%=  Listing.find(booking.listing_id).name %> <br>
+      Total: $<%= booking.total %> <br>
+      Check-In: <%= booking.check_in_date %> <br>
+      Check-Out: <%= booking.check_out_date %> <br>
+      Owner: <%= User.find(booking.matched_user_id).name %> <br>
+    </p>
+      <% end %>
+      </div>
+      <% else %>
+    <p>
+      <h3>Properties:</h3>
         <% @user.listings.each do |listing| %><br><br>
           <%= image_tag(listing.image_url(:thumb).to_s) %><br>
           <%=link_to listing.name, listing %><br>
         <% end %>
-      </p>
+    </p>
   <% end %>
-
-
- </p>

@@ -1,3 +1,35 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.sub_header{
+  color: #006699;
+  font-size: 40px;
+}
+
+#bookings_info{
+  font-size: 30px;
+}
+
+.listing_links a{
+  text-decoration: none;
+  font-size: 25px;
+  color: #006699;
+  margin-bottom: 20px;
+}
+
+.listing_links a:hover{
+  color: black;
+  font-weight: bold;
+}
+
+#add_listing a{
+  text-decoration: none;
+  font-size: 30px;
+  color: #006699;
+}
+
+#add_listing a:hover{
+color: black;
+font-weight: bold;
+}
