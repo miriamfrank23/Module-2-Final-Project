@@ -1,7 +1,6 @@
+<div id="all_set"> Hey <%= @user.name %>! You're all set to book <%=@listing_name%>!  Just select your check-in and check-out dates below!</div>
 
-  <h3> Hey <%= @user.name %>! You're all set to book <%=@listing_name%>!  Just select your check-in and check-out dates below!</h3>
-
-  <%= form_for @booking do |f|%>
+  <div class"new_booking"><%= form_for @booking do |f|%>
 
 
   <p> Check in Date:
@@ -23,7 +22,8 @@
   <%= hidden_field_tag 'matched_user_id', @owner.id  %>
 
   <p> <%= @user.name %>, don't forget! If you have any questions please contact <%=@owner.name%>!  Just click here to send your message!
-  <%= link_to "Contact Owner", new_inquiry_path, :listing_id => @listing.id, :user_id => @user.id, :owner_id => @owner.id %>
+  <div id="contact_owner"><%= link_to "Contact Owner", new_inquiry_path, :listing_id => @listing.id, :user_id => @user.id, :owner_id => @owner.id %></div>
   </p>
+</div>
 
 <% end %>

@@ -23,10 +23,10 @@
       </div>
       <% else %>
     <p>
-      <h3>Properties:</h3>
+      <div class="sub_header">Properties:</div>
         <% @user.listings.each do |listing| %><br><br>
-          <%= image_tag(listing.image_url(:thumb).to_s) %><br>
-          <%=link_to listing.name, listing %><br>
+        <%= image_tag(listing.image_url(:thumb).to_s) %><br>
+        <div class="listing_links"> <%=link_to listing.name, listing %><br></div>
         <% end %>
     </p>
   <% end %>

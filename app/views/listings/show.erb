@@ -32,8 +32,9 @@
   <br>
 
 <% if current_user != @listing.user && current_user %>
-  <p><%= link_to 'Write a review', new_review_path(flash[:listing_id] = @listing.id) %></p>
+  <div class="listing_links"><%= link_to 'Write a review', new_review_path(flash[:listing_id] = @listing.id) %></div>
 <% end %>
+<br><br>
 
 <% if current_user != @listing.user && current_user %>
   <%=button_to 'Book this place', '/bookings/new', params: {listing_id: @listing.id}, class: "btn"%>

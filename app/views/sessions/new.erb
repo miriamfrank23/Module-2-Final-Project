@@ -1,10 +1,11 @@
-<h2 id="login_header">Log in</h2>
+<h2 id="loginheader">Log in</h2>
 
-<% if flash[:danger] %>
+<div id="danger"><% if flash[:danger] %>
 <%= flash[:danger] %>
 <% end %>
+</div>
 
-  <%= form_for(:session, url: login_path) do |f| %>
+  <div id="form"><%= form_for(:session, url: login_path) do |f| %>
 
     <%= f.label :email %>
     <%= f.email_field :email, class: "search_bar" %>
@@ -15,5 +16,6 @@
     <%= f.submit "Log in", class: "btn" %>
 
     <% end %>
+  </div>
 
-<div>New user? <%= link_to "Sign up now!", signup_path %></div>
+<div id="new_user">New user? <%= link_to "Sign up now!", signup_path %></div>

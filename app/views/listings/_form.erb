@@ -5,7 +5,7 @@
 <% end %>
 
 
-<%= form_for @listing do |f| %>
+<div id="new_listing"><%= form_for @listing do |f| %>
 
   <%= f.label :name %>:
   <%= f.text_field :name, class: "search_bar" %>
@@ -26,5 +26,6 @@
    <%= f.file_field :image%><br><br>
 
   <%= f.submit class: "btn"%>
+</div>
 
 <% end %>

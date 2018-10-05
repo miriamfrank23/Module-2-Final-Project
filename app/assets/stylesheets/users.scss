@@ -3,8 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .sub_header{
-  color: #006699;
-  font-size: 40px;
+  color: black;
+  font-size: 35px;
 }
 
 #bookings_info{
@@ -32,4 +32,8 @@
 #add_listing a:hover{
 color: black;
 font-weight: bold;
+}
+
+#create_account{
+  font-size: 25px;
 }
