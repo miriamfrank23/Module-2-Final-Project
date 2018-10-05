@@ -27,8 +27,20 @@
   overflow: hidden;
   border-radius: 40%;
   // box-shadow: 10px 5px black;
-  box-shadow:0 15px 14px -6px rgba(68, 68, 68, 0.6);
-  border: 1px white solid;
+  // box-shadow:0 15px 14px -6px rgba(68, 68, 68, 0.6);
+  // border: 1px white solid;
+}
+
+.listing_card_img:hover{
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 40%;
+  // box-shadow: 10px 5px black;
+  box-shadow: 20px 40px 30px -10px rgba(68, 68, 68, 0.6);
+  border: 2px black solid;
 }
 
 .card_img{
