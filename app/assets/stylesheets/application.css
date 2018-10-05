@@ -58,6 +58,8 @@ html{
   height: 20%;
   margin: 0;
   font-family: 'Lobster', cursive;
+  padding-left: 20px;
+  padding-top: 20px;
 }
 
 #body{
