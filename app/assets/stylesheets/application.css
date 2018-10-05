@@ -50,7 +50,8 @@ html{
   text-decoration: none;
 }
 
-#logo{
+#logo a{
+  text-decoration: none;
   color: white;
   font-size: 70px;
   position: relative;

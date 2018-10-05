@@ -14,12 +14,14 @@
 
 <div class="listings_container">
 <% @listings.each do |listing| %>
+  <%= link_to listing do %>
   <div class="listing_card">
     <div class="listing_card_img">
       <%= image_tag((listing.image_url(:thumb).to_s), :class => "card_img") %>
     </div>
     <div class="listing_card_name">
       <%= link_to listing.name, listing %>
+      <% end %>
     </div>
   </div>
 <% end %>
