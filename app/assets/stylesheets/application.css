@@ -60,11 +60,13 @@
   text-align: center;
   text-transform: uppercase;
   margin-top: 8vh;
+  color: white;
 }
 
 .title{
   font-size: 50px;
   font-family: 'Open Sans Condensed', sans-serif;
+  color: white;
 }
 
 .btn{
@@ -110,8 +112,4 @@
   border-width: 1px;
   border-color: darkgrey;
   border-radius: 5px;
-}
-
-.title {
-  color: white;
 }
