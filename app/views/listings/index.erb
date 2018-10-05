@@ -15,11 +15,8 @@
 
     <div>
       <%= form_tag(listings_path, method: :get) do %>
-       <div>
-         Search for a listing by state
-       </div>
        <br>
-       <%= text_field_tag :state, nil, placeholder: "NY, CA, etc.", class: "search_bar" %>  <%=submit_tag 'Search', :class => "btn" %>
+       <%= text_field_tag :state, nil, placeholder: "City, State (NY, CA, etc.)", class: "search_bar" %>  <%=submit_tag 'Search', :class => "btn" %>
       <% end %>
     </div>
 
